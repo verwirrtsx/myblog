@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>迷茫的熊仔</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="mian.css"/>
+		<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+		<!-- 		<audio src="mus.mp3" id="vd" autoplay="autoplay">
+			当前浏览器不支持audio
+		</audio> -->
+		<div class="bg">
+			<!-- <img src="1.jpg" class="img_size"> -->
+			<!-- <div class="glass"></div> -->
+			<div class="shade" id="test">
+				<!-- <img src="tab_1.jpg" class="show_some"> -->
+			</div>
+		</div>
+		</div>
+
+
+		<div id="img_up">
+		<!-- heard 导航 -->
+		<div class="heard">
+		<span> <img src="logo.png"  class="tmd"></span>
+		</div>
+		
+		<!-- body -->
+		<div class="main">
+			
+			<div id="main_box">
+				<div class="main_left">
+					<div class="article">
+						
+					</div>
+				</div>
+				
+				
+				<!-- 右边 -->
+				<div class="main_right">
+					<div class="other">
+						
+						<!-- 搜索 -->
+						<div class="search">
+							<input type="text"  id="search" class="input_search" />
+							<span class="glyphicon glyphicon-search search_btn"></span>
+						</div>
+						
+						<!-- 登入 -->
+						<div class="login">
+							<div class="login_title">
+								登录
+							</div>
+							<div class="login_input">
+								
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				
+				
+			</div>
+			
+		</div>
+		
+		
+		</div>
+
+
+
+		<!-- 模态框 -->
+		<div class="modal fade activ" id="myModal">
+
+			<!-- tabs -->
+			<div class="tabs tabs_open" id="r-up">
+				<!-- 刷新 -->
+				<div id="tab_one">
+					<a href="javascript:void(0);" onclick="js_method('reload')"><img src="tab_4.jpg" alt="刷新" class="reload">
+						<span class="tabs_font">刷新</span>
+					</a>
+
+				</div>
+
+				<!--  -->
+				<div id="tab_two">
+					<a href="javascript:void(0);" onclick="js_method('out')"><img src="tab_5.jpg" alt="上一页" class="img_out">
+						<span class="tabs_font1">上一页</span>
+					</a>
+					<a href="javascript:void(0);" onclick="js_method('go')"><img src="tab_2.jpg" alt="下一页" class="img_go">
+						<span class="tabs_font2">下一页</span>
+					</a>
+				</div>
+
+				<div id="tab_three">
+					<a href="javascript:void(0);" onclick="js_method('menu')"><img src="tab_3.jpg" alt="菜单" class="img_menu">
+						<span class="tabs_font">菜单</span>
+					</a>
+				</div>
+
+			</div>
+
+			<div class="show_some" id="area">
+			</div>
+		</div>
+		<!-- 模态框 -->
+
+	</body>
+</html>
+<script type="text/javascript">
+	var i =0;
+	document.onmousedown = function(e) {
+		var e = e || window.event
+		// alert("e"+e.button);  
+		if (e.button == "2") {
+			$('#myModal').modal('toggle');
+			// 关闭重置
+			// 			$('#myModal').on('hidden.bs.modal', function () {
+			// 				$('#r-up').removeClass('tabs_open');
+			// 				$('#r-up').addClass('tabs_close');
+
+			// 			});
+			// 			// 打开事件监听
+			// 			$('#modal').on('shown.bs.modal', function () {
+			// 			//   // 执行一些动作...
+			// 				$('#r-up').removeClass('tabs_close');
+			// 			  	$('#r-up').addClass('tabs_open');
+
+			// 			});
+			show_tables(e);
+
+			$('#myModal').mousemove(function(f) {
+				/* var xx = f.originalEvent.x|| f.originalEvent.layerX||0;
+				 var yy = f.originalEvent.y|| f.originalEvent.layerY||0;*/
+				var xx = f.pageX;
+				var yy = f.pageY;
+
+				show_bgimg(xx, yy);
+				// console.log("client",document.body.clientWidth,document.body.clientHeight);
+				//console.log(xx+','+yy);
+				//  $(this).text(xx+','+yy);
+			})
+
+			//$('#myModal').modal('toggle');
+			// $('#myModal').modal('hide');
+			//$('#myModal').modal('show');
+			// alert("执行右键代码");  
+		}
+	}
+
+
+	// 放大镜
+
+	function show_bgimg(x, y) {
+		let bwidth = document.body.clientWidth;
+		let bheight = document.body.clientHeight;
+
+		let bx = x / bwidth * 100;
+		let by = y / bheight * 100;
+		//console.log(bx);
+
+		let div_x = x - 65;
+		let div_y = y - 65;
+		//console.log(div_x+'00'+div_y);
+		document.getElementById('area').style = "top:" + div_y + "px; left:" + div_x +
+			"px; display:block;background-position:" + bx + "% " + by + "%;";
+
+	}
+
+	function js_method(type) {
+		switch (type) {
+			case 'reload':
+				window.location.reload();
+				break;
+			case 'go':
+				alert('下一页');
+				break;
+			case 'out':
+				alert('上一页');
+				break;
+			case 'menu':
+				alert('菜单');
+				break;
+		}
+	}
+
+
+
+		setInterval(function(){
+			let hint_arr=[
+				'别',
+				'别找了',
+				'别找了找',
+				'别找了找不到',
+				'别找了找不到的',
+				'别找了找不到的',
+				'别找了找不到的',
+				'别找了找不到的',
+				'上帝',
+				'上帝已',
+				'上帝已如此',
+				'上帝已如此忙碌',
+				'上帝已如此忙碌',
+				'上帝已如此忙碌',
+				'上帝已如此忙碌',
+				'该来',
+				'该来她',
+				'该来她总会',
+				'该来她总会来的',
+				'该来她总会来的',
+				'该来她总会来的',
+				'该来她总会来的',
+				'不',
+				'不找了',
+				'不找了 ',
+				'不找了 --',
+				'不找了 --郭旭',
+				'不找了 --郭旭',
+				'不找了 --郭旭',
+				'不找了 --郭旭',
+				'不找了 --郭旭',
+				
+			];
+			
+			if(i>30){
+				i=0;
+			}
+			document.getElementById('search').setAttribute("placeholder",hint_arr[i]);
+			i++;
+		},300);
+
+	//右键菜单
+	function show_tables(f) {
+		let xxx = f.pageX;
+		let yyy = f.pageY;
+		let bwidth = document.body.clientWidth;
+		// let bheight = document.body.clientHeight;
+		let div_margin = bwidth * 0.1;
+
+		let div_x = xxx - div_margin;
+		let div_y = yyy - div_margin;
+
+		document.getElementById('r-up').style = "top:" + div_y + "px; left:" + div_x + "px; display:block;"
+
+	}
+	/* 	function toggleSound() {
+		            var music = document.getElementById("vd");//获取ID  
+		            if (music.paused) { //判读是否播放  
+		                music.paused=false;
+		                music.play(); //没有就播放
+		            }  
+		            
+		        } */
+
+	/* 	setInterval("toggleSound()",1);
+		var img_list=[
+			'1.jpg',
+			'2.jpg',
+			'3.jpg'
+		];
+		var i =0;
+		$(function(){
+		setInterval(function(){
+		if(i >2){
+			i=0;
+		}
+		// console.log(img_list[i]);
+		document.getElementsByClassName('img_size')[0].src = img_list[i];
+		i++;
+		},3000);	
+		}) */
+	window.oncontextmenu = function() {
+		return false;
+	}
+</script>

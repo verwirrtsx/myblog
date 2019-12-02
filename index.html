@@ -16,64 +16,65 @@
 		<div class="bg">
 			<!-- <img src="1.jpg" class="img_size"> -->
 			<!-- <div class="glass"></div> -->
-			<div class="shade" id="test">
-				<!-- <img src="tab_1.jpg" class="show_some"> -->
-				
-				<div id="img_up">
-				<!-- heard 导航 -->
-				<div class="heard">
-				<span> <img src="logo.png"  class="tmd"></span>
-				</div>
-				
-				<!-- body -->
-				<div class="main">
-					
-					<!-- <div id="main_box"> -->
-						<div class="main_left">
-							<div class="article">
-								
-							</div>
-						</div>
-						
-						
-						<!-- 右边 -->
-						<div class="main_right">
-							<div class="other">
-								
-								<!-- 搜索 -->
-								<div class="search">
-									<input type="text"  id="search" class="input_search" />
-									<span class="glyphicon glyphicon-search search_btn"></span>
-								</div>
-								
-								<!-- 登入 -->
-								<div class="login">
-									<div class="login_title">
-										登录
-									</div>
-									<div class="login_input">
-										
-									</div>
-								</div>
-								
-							</div>
-						</div>
-						
-						
-					<!-- </div> -->
-					
-				</div>
-				
-				
-				</div>
-				
+			<div class="shade" id="test" >
+				<!-- <img src="tab_1.jpg" class="show_some"> -->	
 				
 			</div>
 			
 			
 		</div>
+		
+		<div id="top_one">
+			<div id="img_up">
+			<!-- heard 导航 -->
+			<div class="heard">
+			<span> <img src="logo.png"  class="tmd"></span>
+			</div>
+			<!-- body -->
+			<div class="main">
+				
+				<!-- <div id="main_box"> -->
+					<div class="main_left">
+						<div class="article rotation">
+							
+						</div>
+						<div class="article">
+							
+						</div>
+					</div>
+					
+					
+					<!-- 右边 -->
+					<div class="main_right">
+						<div class="other">
+							
+							<!-- 搜索 -->
+							<div class="search">
+								<input type="text"  id="search" class="input_search" />
+								<span class="glyphicon glyphicon-search search_btn" onclick="search()"></span>
+							</div>
+							
+							<!-- 登入 -->
+							<div class="login">
+								<div class="login_title">
+									登录
+								</div>
+								<div class="login_input">
+									
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					
+					
+				<!-- </div> -->
+				
+			</div>
+			
+			
+			</div>
 		</div>
-
 
 	
 
@@ -113,12 +114,49 @@
 			<div class="show_some" id="area">
 			</div>
 		</div>
+<!-- 		<div id="boom" class="show_no activ_star">
+			<span class="glyphicon glyphicon-star" id="solid_star"></span>
+			<span class="glyphicon glyphicon-star-empty" id="empty_star"></span>	
+		</div> -->
+		<span class="glyphicon glyphicon-star show_no" id="solid_star"></span>
 		<!-- 模态框 -->
 
 	</body>
 </html>
 <script type="text/javascript">
+	// 爆炸
+	function show_boom(e){
+		
+		let X =e.clientX;
+		let Y =e.clientY;
+		// let b =0;
+		// $('#boom').removeClass('show_no');
+		// setInterval(function(){
+		// if(b> 15){
+		// return false;
+		// }
+		// if(b%2 == 0){
+		// 	document.getElementById('solid_star').style ='display:block;';
+		// 	console.log('2');
+		// }else{
+		// 	document.getElementById('empty_star').style ='display:block;';
+		// 	console.log('1');
+		// }
+		
+		// b++;
+		// },100);
+		$('#solid_star').removeClass('show_no');
+		$('#solid_star').addClass('buling');
+		document.getElementById('solid_star').style ="top:" + Y + "px; left:" + X +"px; display:block;";
+		setTimeout(function(){
+			
+		},1000)
+	}
+	
+	
+	
 	var i =0;
+	
 	document.onmousedown = function(e) {
 		var e = e || window.event
 		// alert("e"+e.button);  
@@ -155,6 +193,8 @@
 			// $('#myModal').modal('hide');
 			//$('#myModal').modal('show');
 			// alert("执行右键代码");  
+		}else if(e.button==0){
+			show_boom(e);
 		}
 	}
 
@@ -194,7 +234,11 @@
 		}
 	}
 
-
+	function search(str){
+		alert('你要的都没有，我有的你全带走');
+	}
+	
+	
 
 		setInterval(function(){
 			let hint_arr=[
@@ -253,6 +297,23 @@
 		document.getElementById('r-up').style = "top:" + div_y + "px; left:" + div_x + "px; display:block;"
 
 	}
+
+	
+	$("#top_one").scroll(function(e) {
+	 // console.log($("#top_one").scrollTop());
+	 let art_arr = document.getElementsByClassName('article');
+	 let bheight = document.body.clientHeight;
+	 // console.log();
+	 let x_index = $("#top_one").scrollTop() / (bheight * 0.81);
+	 //console.log(x_index)
+	 let ii = 0;
+	 for(ii;ii<art_arr.length;ii++){
+		 art_arr[ii].className ='article'; 
+	 }
+	 art_arr[Math.floor(x_index)+1].className ='article  rotation';
+	 
+	});
+	
 	/* 	function toggleSound() {
 		            var music = document.getElementById("vd");//获取ID  
 		            if (music.paused) { //判读是否播放  
@@ -282,4 +343,6 @@
 	window.oncontextmenu = function() {
 		return false;
 	}
+
+
 </script>

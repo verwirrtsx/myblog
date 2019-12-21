@@ -395,11 +395,11 @@
 			background-color: rgba(0,0,0,.3);
 			border-radius: 5px;
 			width: 98%;
-			padding-bottom: 90%;
-			height: 0;
+			text-align: center;
 			margin: 1%;
 			overflow:auto;
 			margin-bottom: 70px;
+			position: relative;
 		}
 		.article:hover{
 			background-color: rgba(255,255,255,.2);
@@ -600,3 +600,108 @@
 			-webkit-animation: star 1s;
 			animation-iteration-count: 1;
 		}
+		.jt_text{
+			width: 80%;
+			margin-left: 10%;
+			padding-top: 10%;
+			display: block;
+
+			text-align: center;
+			font-size: 25px;
+			color: white;
+			font-family: 楷体;
+			text-shadow:10px 10px 30px DeepPink;
+
+		}
+		.gg_text{
+
+			width: 80%;
+			margin-left: 10%;
+			padding-top: 10%;
+			display: block;
+
+			text-align: center;
+			font-size: 25px;
+			color: white;
+			font-family: 楷体;
+			text-shadow:10px 10px 30px orangered;
+
+		}
+		.article_title{
+			font-family:幼圆;
+			font-size: 25px;
+			color: rgba(255,255,255,.5);
+			text-align: center;
+			display: block;
+			text-shadow:0px 0px 30px orangered;
+			padding-top: 4%;
+		}
+		.time_a{
+			width: 5vw;
+			height: 5vw;
+			background-color: rgba(	160 ,32 ,240,.4);
+			border-radius: 50%;
+			position: absolute;
+			top: -1.5vw;
+			left: -1.5vw;
+			z-index: 99;
+
+		}
+		.title_mouth{
+			position: absolute;
+			top: 1.7vw;
+			left: 2.6vw;
+			color: white;
+			z-index: 999;
+		}
+		.title_day{
+			position: absolute;
+			top: 2.7vw;
+			font-size: 25px;
+			left: 2vw;
+			color: white;
+			z-index: 999;
+		}
+		.title_tag{
+			width: 100%;
+			text-align: center;
+			margin-top: 20px;
+		}
+		.title_tag .tag{
+			padding:2px 12px;
+			background-color: rgba(255,255,255,.1);
+			color: rgba(255,255,255,.6);
+			border-radius: 4px;
+			margin-right: 5px;
+		}
+		.tag:hover{
+			background-color: rgba(0,255,255,.1);
+		}
+		.article .detail{
+			width: 96%;
+			margin: 2%;
+			height: 96%;
+			background-color: red;
+			position: relative;
+		}
+		.detail .img{
+			width: 100%;
+			height: 100%;
+			background-color: red;
+		}
+		.intro{
+			width: 100%;
+			height: 100%;
+			padding: 10%;
+			font-size: 25px;
+			color: white;
+			text-shadow:0px 0px 30px orangered;
+			background-color: rgba(0,0,0,.5);
+			position: absolute;
+			z-index: 999;
+			top: 0px;
+			left: 0px;
+			display: none;
+		}
+
+		

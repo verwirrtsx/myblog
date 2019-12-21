@@ -35,12 +35,66 @@
 				
 				<!-- <div id="main_box"> -->
 					<div class="main_left">
+						<!-- 框选 -->
 						<div class="article rotation">
-							
+							<div class="time_a">
+								<span class="title_mouth">12月</span>
+								<span class="title_day">15</span>
+							</div>
+							<span class="article_title">网站介绍</span>
+							<div class="title_tag">
+								<span class="tag">公告</span>
+								<span class="tag">关于网站</span>
+							</div>
+							<div class="detail">
+								<img src="1.jpg" class="img">
+								<div class="intro">
+									有人说，林深时见鹿，海蓝时见鲸，梦醒时见你。可我，林深时雾起，海深时浪涌，梦醒时夜续，不见鹿，不见鲸，也不见你。
+								</div>
+							</div>
 						</div>
-						<div class="article">
-							
+
+						<!-- 框选 -->
+						<div class="article ">
+							<div class="time_a">
+								<span class="title_mouth">12月</span>
+								<span class="title_day">15</span>
+							</div>
+							<span class="article_title">网站介绍</span>
+							<div class="title_tag">
+								<span class="tag">公告</span>
+								<span class="tag">关于网站</span>
+							</div>
+							<div class="detail">
+								<img src="3.jpg" class="img">
+								<div class="intro">
+									有人说，林深时见鹿，海蓝时见鲸，梦醒时见你。可我，林深时雾起，海深时浪涌，梦醒时夜续，不见鹿，不见鲸，也不见你。
+								</div>
+							</div>
 						</div>
+
+						<!-- 框选 -->
+						<div class="article ">
+							<div class="time_a">
+								<span class="title_mouth">12月</span>
+								<span class="title_day">15</span>
+							</div>
+							<span class="article_title">网站介绍</span>
+							<div class="title_tag">
+								<span class="tag">公告</span>
+								<span class="tag">关于网站</span>
+							</div>
+							<div class="detail">
+								<img src="2.jpg" class="img">
+								<div class="intro">
+									有人说，林深时见鹿，海蓝时见鲸，梦醒时见你。可我，林深时雾起，海深时浪涌，梦醒时夜续，不见鹿，不见鲸，也不见你。
+								</div>
+							</div>
+						</div>
+
+
+
+
 					</div>
 					
 					
@@ -54,19 +108,40 @@
 								<span class="glyphicon glyphicon-search search_btn" onclick="search()"></span>
 							</div>
 							
-							<!-- 登入 -->
+							<!-- 公告 -->
 							<div class="login">
 								<div class="login_title">
-									登录
+									公告
 								</div>
 								<div class="login_input">
-									
+									<span class="gg_text"> 嘀嘀嘀</span>
 								</div>
 							</div>
+
+							<div class="login">
+								<div class="login_title">
+									心灵鸡汤
+								</div>
+								<div class="login_input">
+									<span class="jt_text"> 我身倾苹木，言语止住，无关卿的招数，卖弄之余黎明日出。</span>
+								</div>
+							</div>
+
+
+								<div class="login">
+								<div class="login_title">
+									关于我
+								</div>
+								<div class="login_input">
+									<span class="jt_text"></span>
+								</div>
+							</div>
+
 							
 						</div>
 					</div>
-					
+
+
 					
 				<!-- </div> -->
 				
@@ -125,33 +200,17 @@
 </html>
 <script type="text/javascript">
 	// 爆炸
-	function show_boom(e){
+	// function show_boom(e){
 		
-		let X =e.clientX;
-		let Y =e.clientY;
-		// let b =0;
-		// $('#boom').removeClass('show_no');
-		// setInterval(function(){
-		// if(b> 15){
-		// return false;
-		// }
-		// if(b%2 == 0){
-		// 	document.getElementById('solid_star').style ='display:block;';
-		// 	console.log('2');
-		// }else{
-		// 	document.getElementById('empty_star').style ='display:block;';
-		// 	console.log('1');
-		// }
-		
-		// b++;
-		// },100);
-		$('#solid_star').removeClass('show_no');
-		$('#solid_star').addClass('buling');
-		document.getElementById('solid_star').style ="top:" + Y + "px; left:" + X +"px; display:block;";
-		setTimeout(function(){
+	// 	let X =e.clientX;
+	// 	let Y =e.clientY;
+	// 	$('#solid_star').removeClass('show_no');
+	// 	$('#solid_star').addClass('buling');
+	// 	document.getElementById('solid_star').style ="top:" + Y + "px; left:" + X +"px; display:block;";
+	// 	setTimeout(function(){
 			
-		},1000)
-	}
+	// 	},1000)
+	// }
 	
 	
 	
@@ -193,9 +252,10 @@
 			// $('#myModal').modal('hide');
 			//$('#myModal').modal('show');
 			// alert("执行右键代码");  
-		}else if(e.button==0){
-			show_boom(e);
 		}
+		// else if(e.button==0){
+		// 	show_boom(e);
+		// }
 	}
 
 
@@ -344,5 +404,58 @@
 		return false;
 	}
 
+!function (e, t, a) {
+    function r() {
+        for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y-- , s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
+        requestAnimationFrame(r)
+    }
+    function n() {
+        var t = "function" == typeof e.onclick && e.onclick;
+        e.onclick = function (e) {
+            t && t(),
+                o(e);
+        };
+    }
+    function o(e) {
+        var a = t.createElement("div");
+        a.className = "heart",
+            s.push({
+                el: a,
+                x: e.clientX - 5,
+                y: e.clientY - 5,
+                scale: 1,
+                alpha: 1,
+                color: c()
+            }),
+            t.body.appendChild(a);
+    }
+    function i(e) {
+        var a = t.createElement("style");
+        a.type = "text/css";
+        try {
+            a.appendChild(t.createTextNode(e))
+        } catch (t) {
+            a.styleSheet.cssText = e;
+        }
+        t.getElementsByTagName("head")[0].appendChild(a);
+    }
+    function c() {
+        return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")";
+    }
+    var s = [];
+    e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame ||
+        function (e) {
+            setTimeout(e, 1e3 / 60);
+        },
+        i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),
+        n(),
+        r();
+}(window, document);
+
+$(".article").hover(function(){
+    $(".intro").css("display","block");
+},function(){
+    $(".intro").css("display","none");
+});
 
 </script>
